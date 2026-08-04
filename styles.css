@@ -26,7 +26,7 @@ a { color: inherit; }
 .project-card.is-hidden { display: none; }
 .project-art { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: linear-gradient(135deg,rgba(255,255,255,.08),transparent 45%), radial-gradient(circle at 70% 30%,rgba(255,255,255,.13),transparent 35%), #151515; }
 .project-art::after { content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.45),transparent 55%); }
-..art-1 { background: url("images/Metro 2033.png") center/cover no-repeat; }
+.art-1 { background: url("images/Metro 2033.png") center/cover no-repeat; }
 .art-2 { background: url("images/Metro Last Light.png") center/cover no-repeat; }
 .art-3 { background: url("images/Metro Exodus.png") center/cover no-repeat; }
 .art-4 { background: url("images/S.T.A.L.K.E.R. Clear Sky.png") center/cover no-repeat; }
@@ -34,7 +34,7 @@ a { color: inherit; }
 .art-6 { background: url("images/Corepunk.png") center/cover no-repeat; }
 .art-7 { background: url("images/La Quimera.png") center/cover no-repeat; }
 .art-8 { background: url("images/Alexander.png") center/cover no-repeat; }
-.art-9 { background: url("images/Heroes of Annihilated Empires.png") center/cover no-repeat; }
+.art-9 {background: url("images/Heroes of Annihilated empires.png") center/cover no-repeat;}
 .art-film{background-color:#161616;}
 .art-commercial{background-color:#131313;}
 .project-meta { min-height: 104px; padding: 18px 18px 20px; }
