@@ -24,7 +24,7 @@ a { color: inherit; }
 .project-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .project-card { min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--panel); transition: transform 180ms ease; }
 .project-card.is-hidden { display: none; }
-.project-art { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: linear-gradient(135deg,rgba(255,255,255,.08),transparent 45%), radial-gradient(circle at 70% 30%,rgba(255,255,255,.13),transparent 35%), #151515; }
+.project-art { aspect-ratio: 5 / 4; position: relative; overflow: hidden; background: linear-gradient(135deg,rgba(255,255,255,.08),transparent 45%), radial-gradient(circle at 70% 30%,rgba(255,255,255,.13),transparent 35%), #151515; }
 .project-art::after { content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.45),transparent 55%); }
 .art-1 { background: url("images/Metro 2033.png") center/cover no-repeat; }
 .art-2 { background: url("images/Metro Last Light.png") center/cover no-repeat; }
