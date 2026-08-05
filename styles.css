@@ -42,7 +42,7 @@ a { color: inherit; }
 .project-meta p { margin: 0; color: var(--muted); font-size: 14px; }
 .project-card:hover { transform: translateY(-3px); }
 .about { display: grid; grid-template-columns: minmax(260px,.8fr) minmax(0,1.6fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.portrait-placeholder { min-height: 520px; display: grid; place-items: center; border-right: 1px solid var(--line); background: linear-gradient(145deg,rgba(255,255,255,.05),transparent 45%), #111; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; }
+.portrait-placeholder{min-height:520px;display:grid;place-items:center;border-right:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.05),transparent 45%),url("images/alexey.jpg") center top/cover no-repeat;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px;}
 .about-copy { padding: clamp(38px,6vw,90px); }
 .kicker { margin: 0 0 28px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: 13px; }
 .about-copy h2 { margin: 0 0 36px; font-size: clamp(34px,5vw,70px); line-height: .95; letter-spacing: -.05em; max-width: 850px; }
