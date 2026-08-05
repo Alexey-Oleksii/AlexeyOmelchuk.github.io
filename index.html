@@ -3,270 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Official portfolio of composer, audio lead and sound designer Alexey (Oleksii) Omelchuk."
-  >
-
   <title>Alexey (Oleksii) Omelchuk — Composer</title>
-
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+<header class="site-header">
+  <div class="identity">
+    <a class="name" href="#top">Alexey (Oleksii) Omelchuk</a>
+    <p>Composer | Audio Lead | Sound Designer</p>
+  </div>
+  <nav class="main-nav">
+    <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <header class="site-header">
-    <div class="identity">
-      <a class="name" href="#top">Alexey (Oleksii) Omelchuk</a>
-      <p>COMPOSER | AUDIO LEAD | SOUND DESIGNER</p>
+<main id="top">
+<section class="work" id="work">
+  <div class="section-head">
+    <h1>Selected Work</h1>
+    <div class="filters">
+      <button class="filter is-active" type="button" data-filter="games">Games</button>
+      <button class="filter" type="button" data-filter="films">Films</button>
+      <button class="filter" type="button" data-filter="commercials">Commercials</button>
     </div>
+  </div>
 
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="project-grid">
+    <button class="project-card video-card" type="button" data-category="games" data-video="Ej1rnyyKb8A"><div class="project-art art-1"><span class="play-mark">▶</span></div><div class="project-meta"><h2>METRO 2033</h2><p>Lead Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="Je57ULYT0SU"><div class="project-art art-2"><span class="play-mark">▶</span></div><div class="project-meta"><h2>METRO Last Light</h2><p>Lead Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="cwDazCRTup0"><div class="project-art art-3"><span class="play-mark">▶</span></div><div class="project-meta"><h2>METRO Exodus</h2><p>Lead Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="FgTR0EwJn00"><div class="project-art art-4"><span class="play-mark">▶</span></div><div class="project-meta"><h2>S.T.A.L.K.E.R. Clear Sky</h2><p>Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="yQzNqP3HYoQ"><div class="project-art art-5"><span class="play-mark">▶</span></div><div class="project-meta"><h2>S.T.A.L.K.E.R. Call Of Prypiat</h2><p>Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="a_Zj0c9-MGQ"><div class="project-art art-6"><span class="play-mark">▶</span></div><div class="project-meta"><h2>COREPUNK</h2><p>Audio Lead | Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="pVF-6ip4LZs"><div class="project-art art-7"><span class="play-mark">▶</span></div><div class="project-meta"><h2>La Quimera</h2><p>Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="s4vAnT-psx4"><div class="project-art art-8"><span class="play-mark">▶</span></div><div class="project-meta"><h2>Alexander</h2><p>Composer</p></div></button>
+    <button class="project-card video-card" type="button" data-category="games" data-video="zLcooog0SEw"><div class="project-art art-9"><span class="play-mark">▶</span></div><div class="project-meta"><h2>Heroes of Annihilated Empires</h2><p>Composer</p></div></button>
 
-  <main id="top">
+    <article class="project-card is-hidden" data-category="films"><div class="project-art art-film"></div><div class="project-meta"><h2>Film Work</h2><p>Selected credits coming soon</p></div></article>
+    <article class="project-card is-hidden" data-category="commercials"><div class="project-art art-commercial"></div><div class="project-meta"><h2>Commercial Music</h2><p>Selected work coming soon</p></div></article>
+  </div>
+</section>
 
-    <section class="work" id="work">
+<section class="about" id="about">
+  <div class="portrait-placeholder"></div>
+  <div class="about-copy">
+    <p class="kicker">About</p>
+    <h2>Audio Lead | Composer | Sound Designer</h2>
+    <p>Over 20 years of experience bringing diverse worlds to life through sound — from working as a one-man audio department to leading an audio team for nine years, including building the entire audio department from the ground up.</p>
+    <p>I create adaptive audio systems where sound becomes the primary voice of the narrative — from dissonant soundscapes for dark, atmospheric worlds and music that builds psychological tension to epic orchestral scores and delicate melodies capable of moving even the toughest audiences.</p>
+  </div>
+</section>
+</main>
 
-      <div class="section-head">
-        <h1>Selected Work</h1>
+<footer id="contact">
+  <p>Contact</p>
+  <div class="contact-links"><a href="mailto:your@email.com">Email</a><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Spotify</a><a href="#">IMDb</a></div>
+</footer>
 
-        <div
-          class="filters"
-          role="group"
-          aria-label="Portfolio filters"
-        >
-          <button
-            class="filter is-active"
-            type="button"
-            data-filter="games"
-          >
-            Games
-          </button>
-
-          <button
-            class="filter"
-            type="button"
-            data-filter="films"
-          >
-            Films
-          </button>
-
-          <button
-            class="filter"
-            type="button"
-            data-filter="commercials"
-          >
-            Commercials
-          </button>
-        </div>
-      </div>
-
-      <div class="project-grid" aria-live="polite">
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=Ej1rnyyKb8A&amp;list=PLmHGHBmLulmjJTCKClgyRa8AU50OrrHwF&amp;index"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-1"></div>
-          <div class="project-meta">
-            <h2>METRO 2033</h2>
-            <p>Lead Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=Je57ULYT0SU&amp;list=PLmHGHBmLulmg8ZH6CqPQEgBdN1EwzTUse&amp;index=52"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-2"></div>
-          <div class="project-meta">
-            <h2>METRO Last Light</h2>
-            <p>Lead Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=cwDazCRTup0&amp;list=PLmHGHBmLulmjNb33c42-YfQ35ioepxCb_&amp;index"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-3"></div>
-          <div class="project-meta">
-            <h2>METRO Exodus</h2>
-            <p>Lead Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://youtu.be/FgTR0EwJn00"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-4"></div>
-          <div class="project-meta">
-            <h2>S.T.A.L.K.E.R. Clear Sky</h2>
-            <p>Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=yQzNqP3HYoQ&amp;list=PLmHGHBmLulmiWDUR4t1aIFyvb7ziVxeyL&amp;index"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-5"></div>
-          <div class="project-meta">
-            <h2>S.T.A.L.K.E.R. Call Of Prypiat</h2>
-            <p>Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=a_Zj0c9-MGQ&amp;list=PLmHGHBmLulmh4cjL0VKwsUf57plxbiW_D&amp;index"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-6"></div>
-          <div class="project-meta">
-            <h2>COREPUNK</h2>
-            <p>Audio Lead | Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=pVF-6ip4LZs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-7"></div>
-          <div class="project-meta">
-            <h2>La Quimera</h2>
-            <p>Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://youtu.be/s4vAnT-psx4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-8"></div>
-          <div class="project-meta">
-            <h2>Alexander</h2>
-            <p>Composer</p>
-          </div>
-        </a>
-
-        <a
-          class="project-card"
-          data-category="games"
-          href="https://www.youtube.com/watch?v=zLcooog0SEw&amp;list=PLmHGHBmLulmhdlaAXpAvZc1ARgL26z_me"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="project-art art-9"></div>
-          <div class="project-meta">
-            <h2>Heroes of Annihilated Empires</h2>
-            <p>Composer</p>
-          </div>
-        </a>
-
-        <article
-          class="project-card is-hidden"
-          data-category="films"
-        >
-          <div class="project-art art-film"></div>
-          <div class="project-meta">
-            <h2>Film Work</h2>
-            <p>Selected credits coming soon</p>
-          </div>
-        </article>
-
-        <article
-          class="project-card is-hidden"
-          data-category="commercials"
-        >
-          <div class="project-art art-commercial"></div>
-          <div class="project-meta">
-            <h2>Commercial Music</h2>
-            <p>Selected work coming soon</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="about" id="about">
-
-      <div
-        class="portrait-placeholder"
-        role="img"
-        aria-label="Portrait of Alexey Omelchuk"
-      ></div>
-
-      <div class="about-copy">
-        <p class="kicker">About</p>
-
-        <h2>Composer | Audio Lead | Sound Designer</h2>
-
-        <p>
-          Bringing worlds to life with 20 years of audio experience -
-          from a solo "one-man band" to leading an audio department for
-          9 years, including building a sound division from scratch.
-        </p>
-
-        <p>
-          I build adaptive audio systems that make sound the primary
-          voice of the narrative - spanning dissonant soundscapes for
-          dark atmospheric worlds, tension-building tracks, epic
-          orchestral scores, and delicate melodies that can make a
-          grown man cry.
-        </p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer id="contact">
-
-    <p>Contact</p>
-
-    <div class="contact-links">
-      <a href="mailto:your@email.com">Email</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">YouTube</a>
-      <a href="#">Spotify</a>
-      <a href="#">IMDb</a>
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal__backdrop" data-close-video></div>
+  <div class="video-modal__dialog">
+    <button class="video-modal__close" type="button" data-close-video>×</button>
+    <div class="video-modal__frame">
+      <iframe id="videoFrame" src="" title="YouTube video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
+  </div>
+</div>
 
-  </footer>
-
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
