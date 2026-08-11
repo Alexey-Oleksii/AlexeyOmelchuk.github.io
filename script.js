@@ -32,6 +32,24 @@ filterButtons.forEach(button => {
 const modal = document.getElementById('videoModal');
 const frame = document.getElementById('videoFrame');
 
+document.querySelectorAll('.video-card[data-platform="vimeo"]').forEach(card => {
+  const videoId = card.dataset.video;
+  const art = card.querySelector('.project-art');
+
+  fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${videoId}`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.thumbnail_url && art) {
+        art.style.backgroundImage = `url("${data.thumbnail_url}")`;
+        art.style.backgroundSize = 'cover';
+        art.style.backgroundPosition = 'center';
+        art.style.backgroundRepeat = 'no-repeat';
+      }
+    })
+    .catch(error => {
+      console.error('Vimeo thumbnail error:', videoId, error);
+    });
+});
 document.querySelectorAll('.video-card').forEach(card => {
   card.addEventListener('click', () => {
 
