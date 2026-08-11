@@ -34,8 +34,14 @@ const frame = document.getElementById('videoFrame');
 
 document.querySelectorAll('.video-card').forEach(card => {
   card.addEventListener('click', () => {
-    frame.src =
-      `https://www.youtube.com/embed/${card.dataset.video}?autoplay=1&rel=0`;
+
+    if (card.dataset.platform === 'vimeo') {
+      frame.src =
+        `https://player.vimeo.com/video/${card.dataset.video}?autoplay=1`;
+    } else {
+      frame.src =
+        `https://www.youtube.com/embed/${card.dataset.video}?autoplay=1&rel=0`;
+    }
 
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
