@@ -47,3 +47,28 @@
     grid-template-columns: 1fr;
   }
 }
+/* TRAILER THUMBNAILS */
+
+.trailer-art-1 {
+  background: url("images/trailer-1.jpg") center/cover no-repeat;
+}
+
+.trailer-art-2 {
+  background: url("images/trailer-2.jpg") center/cover no-repeat;
+}
+
+.trailer-art-3 {
+  background: url("images/trailer-3.jpg") center/cover no-repeat;
+}
+
+.trailer-art-4 {
+  background: url("images/trailer-4.jpg") center/cover no-repeat;
+}
+
+.trailer-art-5 {
+  background: url("images/trailer-5.jpg") center/cover no-repeat;
+}
+
+.trailer-art-6 {
+  background: url("images/trailer-6.jpg") center/cover no-repeat;
+}
