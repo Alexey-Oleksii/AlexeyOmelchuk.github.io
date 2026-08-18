@@ -50,9 +50,8 @@ document.querySelectorAll('.commercial-grid .video-card[data-platform="vimeo"]')
       console.error('Vimeo thumbnail error:', videoId, error);
     });
 });
-document.querySelectorAll('.commercial-grid .video-card[data-platform="vimeo"]').forEach(card => {
-  card.addEventListener('click', () => {
-
+document.querySelectorAll('.video-card').forEach(card => {
+card.addEventListener('click', () => {
     if (card.dataset.platform === 'vimeo') {
       frame.src =
         `https://player.vimeo.com/video/${card.dataset.video}?autoplay=1`;
