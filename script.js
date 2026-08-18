@@ -32,7 +32,7 @@ filterButtons.forEach(button => {
 const modal = document.getElementById('videoModal');
 const frame = document.getElementById('videoFrame');
 
-document.querySelectorAll('.video-card[data-platform="vimeo"]').forEach(card => {
+document.querySelectorAll('.commercial-grid .video-card[data-platform="vimeo"]').forEach(card => {
   const videoId = card.dataset.video;
   const art = card.querySelector('.project-art');
 
