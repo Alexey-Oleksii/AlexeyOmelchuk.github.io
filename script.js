@@ -50,7 +50,7 @@ document.querySelectorAll('.video-card[data-platform="vimeo"]').forEach(card => 
       console.error('Vimeo thumbnail error:', videoId, error);
     });
 });
-document.querySelectorAll('.video-card').forEach(card => {
+document.querySelectorAll('.commercial-grid .video-card[data-platform="vimeo"]').forEach(card => {
   card.addEventListener('click', () => {
 
     if (card.dataset.platform === 'vimeo') {
