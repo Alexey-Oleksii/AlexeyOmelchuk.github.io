@@ -1,1 +1,168 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Alexey (Oleksii) Omelchuk</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .contact-page {
+      min-height: calc(100vh - 115px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 30px;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.58),
+          rgba(0, 0, 0, 0.72)
+        ),
+        url("images/contact-bg.jpg") center / cover no-repeat;
+    }
+
+    .contact-page__content {
+      position: relative;
+      z-index: 2;
+      width: min(900px, 100%);
+      text-align: center;
+    }
+
+    .contact-page h1 {
+      margin: 0 0 22px;
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .contact-intro {
+      max-width: 700px;
+      margin: 0 auto 55px;
+      color: #d0d0d0;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.5;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-bottom: 45px;
+      color: #fff;
+      font-size: clamp(20px, 2.5vw, 32px);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.55);
+      padding-bottom: 6px;
+    }
+
+    .contact-email:hover {
+      border-color: #fff;
+    }
+
+    .contact-socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px 30px;
+    }
+
+    .contact-socials a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 14px;
+    }
+
+    .contact-socials a:hover {
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    @media (max-width: 640px) {
+      .contact-page {
+        min-height: calc(100vh - 100px);
+        padding: 60px 20px;
+      }
+
+      .contact-intro {
+        margin-bottom: 40px;
+      }
+
+      .contact-email {
+        margin-bottom: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="identity">
+    <a class="name" href="index.html">
+      Alexey (Oleksii) Omelchuk
+    </a>
+    <p>COMPOSER | AUDIO LEAD | SOUND DESIGNER</p>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="contact-page">
+
+  <div class="contact-page__content">
+
+    <h1>Get in Touch</h1>
+
+    <p class="contact-intro">
+      For commissions, collaborations and project inquiries.
+    </p>
+
+    <a class="contact-email"
+       href="mailto:alexeyomelchuk.music@gmail.com">
+      alexeyomelchuk.music@gmail.com
+    </a>
+
+    <div class="contact-socials">
+
+      <a href="https://www.linkedin.com/in/oleksii-omelchuk"
+         target="_blank"
+         rel="noopener noreferrer">
+        LinkedIn
+      </a>
+
+      <a href="https://www.youtube.com/@AlexeyOmelchuk"
+         target="_blank"
+         rel="noopener noreferrer">
+        YouTube
+      </a>
+
+      <a href="https://www.imdb.com/name/nm3913658/"
+         target="_blank"
+         rel="noopener noreferrer">
+        IMDb
+      </a>
+
+      <a href="https://www.mobygames.com/person/254048/alexey-omelchuk/credits/"
+   target="_blank"
+   rel="noopener noreferrer">
+  MobyGames
+</a>
+
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>
