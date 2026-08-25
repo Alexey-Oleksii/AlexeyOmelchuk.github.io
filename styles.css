@@ -92,3 +92,27 @@
 .film-art-3 {
   background: url("images/film-3.png") center/cover no-repeat;
 }
+/* HEADER & WORK TYPOGRAPHY ADJUSTMENTS */
+
+/* Composer | Audio Lead | Sound Designer */
+.identity p {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+/* Work / About / Contact */
+.main-nav a {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+/* Selected Work */
+.section-head h1 {
+  font-size: clamp(26px, 2.5vw, 36px);
+  line-height: 1;
+}
+
+/* Games / Films / Commercials / Trailers */
+.filter {
+  font-size: 18px;
+}
