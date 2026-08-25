@@ -127,3 +127,39 @@
 .section-head {
   margin-bottom: 24px;
 }
+/* ABOUT BUTTONS */
+
+.about-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 170px;
+  height: 52px;
+
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+
+  transition: background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.about-btn:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
