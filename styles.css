@@ -118,6 +118,11 @@
   font-size: 19px;
 }
 
+#work {
+  scroll-margin-top: 140px;
+}
+
+
 /* Відступ між заголовком і картками */
 .section-head {
   margin-bottom: 24px;
