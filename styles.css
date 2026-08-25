@@ -94,25 +94,31 @@
 }
 /* HEADER & WORK TYPOGRAPHY ADJUSTMENTS */
 
-/* Composer | Audio Lead | Sound Designer */
+/* COMPOSER | AUDIO LEAD | SOUND DESIGNER */
 .identity p {
-  font-size: 18px;
-  line-height: 1.35;
+  font-size: 19px;
+  line-height: 1.3;
 }
 
-/* Work / About / Contact */
+/* WORK / ABOUT / CONTACT */
 .main-nav a {
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 0.08em;
 }
 
 /* Selected Work */
 .section-head h1 {
-  font-size: clamp(26px, 2.5vw, 36px);
+  font-size: clamp(30px, 2.7vw, 40px);
   line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 /* Games / Films / Commercials / Trailers */
 .filter {
-  font-size: 18px;
+  font-size: 19px;
+}
+
+/* Відступ між заголовком і картками */
+.section-head {
+  margin-bottom: 24px;
 }
