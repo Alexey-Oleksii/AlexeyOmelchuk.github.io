@@ -17,8 +17,7 @@
 }
 
 .commercial-grid.is-hidden {
-  display: none;
-}
+  display: none;}
 
 .commercial-card {
   min-width: 0;
@@ -96,6 +95,7 @@
 }
 /* TYPOGRAPHY */
 
+.name,
 .section-head h1,
 .about-copy h2,
 .contact-page h1 {
