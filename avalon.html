@@ -1,1 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Music for Avalon Zero | Alexey (Oleksii) Omelchuk</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #080808;
+      color: #f2f2f2;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      min-height: 136px;
+      padding: 28px 24px 24px;
+      border-bottom: 1px solid #2a2a2a;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .name {
+      font-size: clamp(30px, 3vw, 48px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    .role {
+      margin-top: 8px;
+      color: #969696;
+      font-size: 20px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 40px;
+      padding-top: 8px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .nav a:hover {
+      opacity: .65;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 420px;
+      border-bottom: 1px solid #252525;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 90px 6vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #8c8c8c;
+      font-size: 12px;
+      letter-spacing: 5px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: .98;
+      letter-spacing: -2px;
+      font-weight: 600;
+    }
+
+    .hero h1 span {
+      color: #858585;
+      font-weight: 400;
+    }
+
+    .hero-art {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background:
+        radial-gradient(circle at center, rgba(130,20,20,.22), transparent 48%),
+        linear-gradient(135deg, #111 0%, #090909 70%);
+    }
+
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #080808 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .logo-placeholder {
+      position: relative;
+      z-index: 2;
+      width: 310px;
+      height: 180px;
+      border: 1px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      letter-spacing: 6px;
+      font-size: 13px;
+    }
+
+    /* CONTENT */
+
+    .section {
+      padding: 70px 3vw 40px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #242424;
+      padding-bottom: 16px;
+    }
+
+    .section-heading h2 {
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+    .section-heading span {
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 42px 20px;
+    }
+
+    .card {
+      min-width: 0;
+    }
+
+    .thumb {
+      aspect-ratio: 16 / 7;
+      background:
+        linear-gradient(135deg, #171717, #0e0e0e);
+      border: 1px solid #292929;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thumb::before {
+      content: "IMAGE";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #454545;
+      letter-spacing: 5px;
+      font-size: 11px;
+    }
+
+    .play {
+      width: 54px;
+      height: 54px;
+      border: 2px solid rgba(255,255,255,.9);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .play::after {
+      content: "";
+      border-left: 13px solid white;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      margin-left: 4px;
+    }
+
+    .card-title {
+      margin-top: 13px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .number {
+      color: #888;
+      margin-right: 9px;
+      font-size: 13px;
+    }
+
+    .media-row {
+      margin-top: 13px;
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 10px;
+    }
+
+    .video-button,
+    .audio-player {
+      height: 44px;
+      border: 1px solid #383838;
+      background: #101010;
+      display: flex;
+      align-items: center;
+    }
+
+    .video-button {
+      justify-content: center;
+      font-size: 12px;
+      transition: .2s;
+    }
+
+    .video-button:hover {
+      background: #181818;
+    }
+
+    .video-button.youtube::before {
+      content: "▶";
+      margin-right: 8px;
+    }
+
+    .video-button.vimeo::before {
+      content: "V";
+      margin-right: 8px;
+      font-weight: 700;
+    }
+
+    .audio-player {
+      padding: 0 12px;
+      gap: 10px;
+      color: #777;
+    }
+
+    .audio-play {
+      width: 25px;
+      height: 25px;
+      border: 1px solid #777;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+      flex: 0 0 auto;
+    }
+
+    .audio-line {
+      height: 2px;
+      background: #3c3c3c;
+      flex: 1;
+    }
+
+    /* AUDIO ONLY */
+
+    .audio-grid .thumb {
+      aspect-ratio: 16 / 6.5;
+    }
+
+    .audio-grid .thumb::before {
+      content: "COVER IMAGE";
+    }
+
+    .audio-grid .audio-player {
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    /* SOCIAL */
+
+    .social {
+      padding: 75px 20px 85px;
+      text-align: center;
+      border-top: 1px solid #242424;
+    }
+
+    .social-title {
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 10px;
+      margin-bottom: 24px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 38px;
+    }
+
+    .social-icons a {
+      width: 52px;
+      height: 52px;
+      border: 1px solid #444;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 17px;
+      transition: .2s;
+    }
+
+    .social-icons a:hover {
+      background: #eee;
+      color: #080808;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #242424;
+      padding: 30px 3vw 45px;
+      display: flex;
+      justify-content: space-between;
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .site-header {
+        display: block;
+      }
+
+      .nav {
+        margin-top: 25px;
+        gap: 25px;
+        font-size: 15px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 70px 6vw 30px;
+      }
+
+      .hero-art {
+        min-height: 260px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .role {
+        font-size: 15px;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .section-heading span {
+        display: none;
+      }
+
+      footer {
+        display: block;
+        line-height: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div>
+    <div class="name">Alexey (Oleksii) Omelchuk</div>
+    <div class="role">COMPOSER | AUDIO LEAD | SOUND DESIGNER</div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html">WORK</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-copy">
+    <div class="eyebrow">Selected Work</div>
+
+    <h1>
+      MUSIC FOR<br>
+      <span>AVALON ZERO</span>
+    </h1>
+  </div>
+
+  <div class="hero-art">
+    <!-- Later we will replace this with the real Avalon Zero logo -->
+    <div class="logo-placeholder">
+      AVALON ZERO
+    </div>
+  </div>
+
+</section>
+
+
+<!-- VIDEO + AUDIO -->
+
+<section class="section">
+
+  <div class="section-heading">
+    <h2>Video + Audio</h2>
+    <span>Commercials / Trailers / Cinematic</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">01</span>
+        Cine + Legend
+      </div>
+
+      <div class="media-row">
+        <a class="video-button vimeo" href="#">Vimeo</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 02 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">02</span>
+        Samsung Ad Wash
+      </div>
+
+      <div class="media-row">
+        <a class="video-button vimeo" href="#">Vimeo</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 03 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">03</span>
+        Exotic Premium
+      </div>
+
+      <div class="media-row">
+        <a class="video-button vimeo" href="#">Vimeo</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 04 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">04</span>
+        Kronenburgh
+      </div>
+
+      <div class="media-row">
+        <a class="video-button vimeo" href="#">Vimeo</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 05 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">05</span>
+        Metro — Artyom’s Dream
+      </div>
+
+      <div class="media-row">
+        <a class="video-button youtube" href="#">YouTube</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 06 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">06</span>
+        Metro — Story
+      </div>
+
+      <div class="media-row">
+        <a class="video-button youtube" href="#">YouTube</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 07 -->
+    <article class="card">
+      <div class="thumb">
+        <div class="play"></div>
+      </div>
+
+      <div class="card-title">
+        <span class="number">07</span>
+        Corepunk Trailer
+      </div>
+
+      <div class="media-row">
+        <a class="video-button youtube" href="#">YouTube</a>
+
+        <div class="audio-player">
+          <div class="audio-play">▶</div>
+          <div class="audio-line"></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- AUDIO ONLY -->
+
+<section class="section">
+
+  <div class="section-heading">
+    <h2>Audio Only</h2>
+    <span>Main Themes / Original Score</span>
+  </div>
+
+  <div class="grid audio-grid">
+
+    <!-- 08 -->
+    <article class="card">
+      <div class="thumb"></div>
+
+      <div class="card-title">
+        <span class="number">08</span>
+        Metro Exodus Main Theme
+      </div>
+
+      <div class="audio-player">
+        <div class="audio-play">▶</div>
+        <div class="audio-line"></div>
+      </div>
+    </article>
+
+
+    <!-- 09 -->
+    <article class="card">
+      <div class="thumb"></div>
+
+      <div class="card-title">
+        <span class="number">09</span>
+        Metro 2033 Main Theme
+      </div>
+
+      <div class="audio-player">
+        <div class="audio-play">▶</div>
+        <div class="audio-line"></div>
+      </div>
+    </article>
+
+
+    <!-- 10 -->
+    <article class="card">
+      <div class="thumb"></div>
+
+      <div class="card-title">
+        <span class="number">10</span>
+        Corepunk Young Hero Theme
+      </div>
+
+      <div class="audio-player">
+        <div class="audio-play">▶</div>
+        <div class="audio-line"></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- YOUTUBE + VIMEO -->
+
+<section class="social">
+
+  <div class="social-title">
+    More Music & Video
+  </div>
+
+  <div class="social-icons">
+
+    <!-- Later replace # with Alexey's YouTube URL -->
+    <a href="#" aria-label="YouTube" title="YouTube">
+      ▶
+    </a>
+
+    <!-- Later replace # with Alexey's Vimeo URL -->
+    <a href="#" aria-label="Vimeo" title="Vimeo">
+      V
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+  <div>ALEXEY OMELCHUK</div>
+  <div>COMPOSER · GAME AUDIO · MUSIC FOR MEDIA</div>
+</footer>
+
+</body>
+</html>
