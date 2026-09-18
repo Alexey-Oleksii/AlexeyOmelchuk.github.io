@@ -519,6 +519,83 @@
 .audio-card .audio-player {
   margin-top: 13px;
 }
+  /* VIDEO POSTERS */
+
+.video-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid #292929;
+  cursor: pointer;
+}
+
+.video-poster img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.video-poster iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.poster-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 58px;
+  height: 58px;
+
+  border: 1.5px solid rgba(255,255,255,.9);
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.42);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 0 0 4px;
+  font-size: 17px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.video-poster:hover .poster-play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(0,0,0,.65);
+}
+
+
+/* AUDIO COVER IMAGES */
+
+.audio-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid #292929;
+}
+
+.audio-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}  
   </style>
 </head>
 
@@ -570,13 +647,10 @@
 
     <!-- 01 CINE + LEGEND -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://player.vimeo.com/video/1217267365"
-          title="Cine + Legend"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://player.vimeo.com/video/1217267365?autoplay=1">
+        <img src="images/avalon/1.fotoA.png" alt="Cine + Legend">
+        <button class="poster-play" type="button" aria-label="Play Cine + Legend">▶</button>
       </div>
 
       <div class="card-title">
@@ -594,13 +668,10 @@
 
     <!-- 02 SAMSUNG -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://player.vimeo.com/video/1217275455"
-          title="Samsung Ad Wash"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://player.vimeo.com/video/1217275455?autoplay=1">
+        <img src="images/avalon/2.fotoA.png" alt="Samsung Ad Wash">
+        <button class="poster-play" type="button" aria-label="Play Samsung Ad Wash">▶</button>
       </div>
 
       <div class="card-title">
@@ -618,13 +689,10 @@
 
     <!-- 03 EXOTIC PREMIUM -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://player.vimeo.com/video/1217243130"
-          title="Exotic Premium"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://player.vimeo.com/video/1217243130?autoplay=1">
+        <img src="images/avalon/3.fotoA.png" alt="Exotic Premium">
+        <button class="poster-play" type="button" aria-label="Play Exotic Premium">▶</button>
       </div>
 
       <div class="card-title">
@@ -642,13 +710,10 @@
 
     <!-- 04 KRONENBURGH -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://player.vimeo.com/video/1217111964"
-          title="Kronenburgh"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://player.vimeo.com/video/1217111964?autoplay=1">
+        <img src="images/avalon/4.fotoA.png" alt="Kronenburgh">
+        <button class="poster-play" type="button" aria-label="Play Kronenburgh">▶</button>
       </div>
 
       <div class="card-title">
@@ -666,13 +731,10 @@
 
     <!-- 05 ARTYOM'S DREAM -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/Mn10KuNiDJM"
-          title="Metro — Artyom’s Dream"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://www.youtube.com/embed/Mn10KuNiDJM?autoplay=1">
+        <img src="images/avalon/5.fotoA.png" alt="Metro — Artyom’s Dream">
+        <button class="poster-play" type="button" aria-label="Play Metro Artyom's Dream">▶</button>
       </div>
 
       <div class="card-title">
@@ -690,13 +752,10 @@
 
     <!-- 06 METRO STORY -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/ITsyel3oxEQ"
-          title="Metro — Story"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://www.youtube.com/embed/ITsyel3oxEQ?autoplay=1">
+        <img src="images/avalon/6.fotoA.png" alt="Metro — Story">
+        <button class="poster-play" type="button" aria-label="Play Metro Story">▶</button>
       </div>
 
       <div class="card-title">
@@ -712,15 +771,12 @@
     </article>
 
 
-    <!-- 07 COREPUNK TRAILER -->
+    <!-- 07 COREPUNK -->
     <article class="card">
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/YfU1oCasTOw"
-          title="Corepunk Trailer"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="video-poster"
+           data-video="https://www.youtube.com/embed/YfU1oCasTOw?autoplay=1">
+        <img src="images/avalon/7.fotoA.png" alt="Corepunk Trailer">
+        <button class="poster-play" type="button" aria-label="Play Corepunk Trailer">▶</button>
       </div>
 
       <div class="card-title">
@@ -752,7 +808,10 @@
 
     <!-- 08 METRO EXODUS -->
     <article class="card audio-card">
-      <div class="audio-cover"></div>
+
+      <div class="audio-cover">
+        <img src="images/avalon/8.fotoA.png" alt="Metro Exodus Main Theme">
+      </div>
 
       <div class="card-title">
         <span class="number">08</span>Metro Exodus Main Theme
@@ -769,7 +828,10 @@
 
     <!-- 09 METRO 2033 -->
     <article class="card audio-card">
-      <div class="audio-cover"></div>
+
+      <div class="audio-cover">
+        <img src="images/avalon/9.fotoA.png" alt="Metro 2033 Main Theme">
+      </div>
 
       <div class="card-title">
         <span class="number">09</span>Metro 2033 Main Theme
@@ -784,9 +846,12 @@
     </article>
 
 
-    <!-- 10 COREPUNK -->
+    <!-- 10 COREPUNK THEME -->
     <article class="card audio-card">
-      <div class="audio-cover"></div>
+
+      <div class="audio-cover">
+        <img src="images/avalon/10.fotoA.png" alt="Corepunk Young Hero Theme">
+      </div>
 
       <div class="card-title">
         <span class="number">10</span>Corepunk Young Hero Theme
@@ -889,6 +954,30 @@ document.querySelectorAll('.audio-player').forEach(player => {
     button.textContent = '▶';
     progress.value = 0;
   });
+});
+</script>
+  <script>
+document.querySelectorAll('.video-poster').forEach(poster => {
+
+  poster.addEventListener('click', () => {
+
+    if (poster.querySelector('iframe')) return;
+
+    const videoUrl = poster.dataset.video;
+
+    const iframe = document.createElement('iframe');
+
+    iframe.src = videoUrl;
+    iframe.title = 'Video player';
+    iframe.allow =
+      'autoplay; fullscreen; picture-in-picture; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    poster.innerHTML = '';
+    poster.appendChild(iframe);
+
+  });
+
 });
 </script>
 </body>
