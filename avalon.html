@@ -595,7 +595,15 @@
   height: 100%;
   display: block;
   object-fit: cover;
-}  
+} 
+    .avalon-logo {
+  position: relative;
+  z-index: 2;
+  width: min(72%, 430px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
   </style>
 </head>
 
@@ -627,10 +635,9 @@
   </div>
 
   <div class="hero-art">
-    <!-- Later we will replace this with the real Avalon Zero logo -->
-    <div class="logo-placeholder">
-      AVALON ZERO
-    </div>
+   <img class="avalon-logo"
+     src="images/avalon/logo.jpg"
+     alt="Avalon Zero">
   </div>
 
 </section>
