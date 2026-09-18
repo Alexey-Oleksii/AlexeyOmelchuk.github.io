@@ -405,23 +405,120 @@
       .section-heading span {
         display: none;
       }
-
-      footer {
-        display: block;
-        line-height: 2;
-      }
-    }
         footer {
       display: block;
       line-height: 2;
     }
-
     }
+    /* AVALON MEDIA */
 
-/* СЮДИ ВСТАВЛЯЄМО НОВИЙ CSS */
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+  border: 1px solid #242424;
+}
 
-</style>
-</head>
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* AUDIO PLAYER */
+
+.audio-player {
+  width: 100%;
+  height: 42px;
+  margin-top: 13px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #101010;
+  border: 1px solid #303030;
+}
+
+.audio-play {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid #777;
+  border-radius: 50%;
+  background: transparent;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  line-height: 1;
+  cursor: pointer;
+  flex: 0 0 26px;
+}
+
+.audio-progress {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1;
+  min-width: 0;
+  height: 2px;
+  background: #444;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.audio-progress::-webkit-slider-runnable-track {
+  height: 2px;
+  background: #444;
+}
+
+.audio-progress::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  border: 0;
+}
+
+.audio-progress::-moz-range-track {
+  height: 2px;
+  background: #444;
+  border: 0;
+}
+
+.audio-progress::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  border: 0;
+}
+
+.audio-time {
+  min-width: 34px;
+  color: #777;
+  font-size: 11px;
+  text-align: right;
+}
+
+/* AUDIO ONLY PLACEHOLDERS */
+
+.audio-cover {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: linear-gradient(135deg, #171717, #0d0d0d);
+  border: 1px solid #292929;
+}
+
+.audio-card .audio-player {
+  margin-top: 13px;
+}
   </style>
 </head>
 
@@ -462,7 +559,6 @@
 </section>
 
 <!-- VIDEO + AUDIO -->
-
 <section class="section">
 
   <div class="section-heading">
@@ -474,203 +570,168 @@
 
     <!-- 01 CINE + LEGEND -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://vimeo.com/1217267365"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://player.vimeo.com/video/1217267365"
+          title="Cine + Legend"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">01</span>Cine + Legend
       </div>
 
-      <div class="media-row">
-        <a class="video-button vimeo"
-           href="https://vimeo.com/1217267365"
-           target="_blank"
-           rel="noopener">Vimeo</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/01.track_cine.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/01.track_cine.mp3"></audio>
       </div>
     </article>
 
 
     <!-- 02 SAMSUNG -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://vimeo.com/1217275455"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://player.vimeo.com/video/1217275455"
+          title="Samsung Ad Wash"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">02</span>Samsung Ad Wash
       </div>
 
-      <div class="media-row">
-        <a class="video-button vimeo"
-           href="https://vimeo.com/1217275455"
-           target="_blank"
-           rel="noopener">Vimeo</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/02.track_samsung.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/02.track_samsung.mp3"></audio>
       </div>
     </article>
 
 
     <!-- 03 EXOTIC PREMIUM -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://vimeo.com/1217243130"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://player.vimeo.com/video/1217243130"
+          title="Exotic Premium"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">03</span>Exotic Premium
       </div>
 
-      <div class="media-row">
-        <a class="video-button vimeo"
-           href="https://vimeo.com/1217243130"
-           target="_blank"
-           rel="noopener">Vimeo</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/03.track_exotic.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/03.track_exotic.mp3"></audio>
       </div>
     </article>
 
 
     <!-- 04 KRONENBURGH -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://vimeo.com/1217111964"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://player.vimeo.com/video/1217111964"
+          title="Kronenburgh"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">04</span>Kronenburgh
       </div>
 
-      <div class="media-row">
-        <a class="video-button vimeo"
-           href="https://vimeo.com/1217111964"
-           target="_blank"
-           rel="noopener">Vimeo</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/04.track_kronenburgh.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/04.track_kronenburgh.mp3"></audio>
       </div>
     </article>
 
 
     <!-- 05 ARTYOM'S DREAM -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://youtu.be/Mn10KuNiDJM"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/Mn10KuNiDJM"
+          title="Metro — Artyom’s Dream"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">05</span>Metro — Artyom’s Dream
       </div>
 
-      <div class="media-row">
-        <a class="video-button youtube"
-           href="https://youtu.be/Mn10KuNiDJM"
-           target="_blank"
-           rel="noopener">YouTube</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/05.track_atryom.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/05.track_atryom.mp3"></audio>
       </div>
     </article>
 
 
     <!-- 06 METRO STORY -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://youtu.be/ITsyel3oxEQ"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/ITsyel3oxEQ"
+          title="Metro — Story"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">06</span>Metro — Story
       </div>
 
-      <div class="media-row">
-        <a class="video-button youtube"
-           href="https://youtu.be/ITsyel3oxEQ"
-           target="_blank"
-           rel="noopener">YouTube</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/06.track_metro_story.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/06.track_metro_story.mp3"></audio>
       </div>
     </article>
 
 
     <!-- 07 COREPUNK TRAILER -->
     <article class="card">
-      <a class="thumb video-thumb"
-         href="https://youtu.be/YfU1oCasTOw"
-         target="_blank"
-         rel="noopener">
-        <div class="play"></div>
-      </a>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/YfU1oCasTOw"
+          title="Corepunk Trailer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <div class="card-title">
         <span class="number">07</span>Corepunk Trailer
       </div>
 
-      <div class="media-row">
-        <a class="video-button youtube"
-           href="https://youtu.be/YfU1oCasTOw"
-           target="_blank"
-           rel="noopener">YouTube</a>
-
-        <div class="audio-player">
-          <button class="audio-play" type="button">▶</button>
-          <input class="audio-progress" type="range" min="0" max="100" value="0">
-          <span class="audio-time">0:00</span>
-          <audio preload="metadata" src="audio/avalon/07.track_corepunk_trailer.mp3"></audio>
-        </div>
+      <div class="audio-player">
+        <button class="audio-play" type="button">▶</button>
+        <input class="audio-progress" type="range" min="0" max="100" value="0">
+        <span class="audio-time">0:00</span>
+        <audio preload="metadata" src="audio/avalon/07.track_corepunk_trailer.mp3"></audio>
       </div>
     </article>
 
@@ -689,9 +750,9 @@
 
   <div class="grid audio-grid">
 
-    <!-- 08 -->
-    <article class="card">
-      <div class="thumb"></div>
+    <!-- 08 METRO EXODUS -->
+    <article class="card audio-card">
+      <div class="audio-cover"></div>
 
       <div class="card-title">
         <span class="number">08</span>Metro Exodus Main Theme
@@ -706,9 +767,9 @@
     </article>
 
 
-    <!-- 09 -->
-    <article class="card">
-      <div class="thumb"></div>
+    <!-- 09 METRO 2033 -->
+    <article class="card audio-card">
+      <div class="audio-cover"></div>
 
       <div class="card-title">
         <span class="number">09</span>Metro 2033 Main Theme
@@ -723,9 +784,9 @@
     </article>
 
 
-    <!-- 10 -->
-    <article class="card">
-      <div class="thumb"></div>
+    <!-- 10 COREPUNK -->
+    <article class="card audio-card">
+      <div class="audio-cover"></div>
 
       <div class="card-title">
         <span class="number">10</span>Corepunk Young Hero Theme
