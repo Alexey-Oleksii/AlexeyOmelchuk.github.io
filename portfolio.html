@@ -50,6 +50,52 @@
     height: 100%;
     border: 0;
   }
+   /* CUSTOM REEL COVER */
+
+.reel-cover {
+  position: relative;
+  cursor: pointer;
+}
+
+.reel-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 0 0 3px;
+
+  border: 1px solid #fff;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reel-cover:hover .reel-play {
+  background: #fff;
+  color: #000;
+  transform: translate(-50%, -50%) scale(1.06);
+}
 
   .portfolio-reel h2 {
     margin: 15px 0 0;
@@ -193,16 +239,25 @@
     <div class="portfolio-reels">
 
       <div class="portfolio-reel">
-        <div class="portfolio-reel__video">
-          <iframe
-            src="https://www.youtube.com/embed/Q5u9P2Pm0-o"
-            title="Game Music Reel"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h2>Game Music Reel</h2>
-      </div>
+  <div
+    class="portfolio-reel__video reel-cover"
+    data-video="Q5u9P2Pm0-o">
+
+    <img
+      src="images/game-music-reel.png"
+      alt="Game Music Reel">
+
+    <button
+      class="reel-play"
+      type="button"
+      aria-label="Play Game Music Reel">
+      ▶
+    </button>
+
+  </div>
+
+  <h2>Game Music Reel</h2>
+</div>
 
       <div class="portfolio-reel">
         <div class="portfolio-reel__video">
@@ -266,6 +321,21 @@
 
   </div>
 </main>
+<script>
+  document.querySelectorAll(".reel-cover").forEach((cover) => {
+    cover.addEventListener("click", () => {
+      const videoId = cover.dataset.video;
 
+      cover.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+          title="Portfolio Reel"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      `;
+    });
+  });
+</script>
 </body>
 </html>
