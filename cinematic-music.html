@@ -1,1 +1,929 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cinematic & Orchestral Music | Alexey (Oleksii) Omelchuk</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #080b0d;
+      --panel: #0d1215;
+      --panel2: #10161a;
+      --line: #283239;
+      --text: #f2f2f2;
+      --muted: #939da5;
+      --soft: #c5c9cc;
+      --accent: #c3a16d;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 50% -20%, #172027 0, transparent 38%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      min-height: 138px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg,
+          rgba(8,11,13,1) 0%,
+          rgba(8,11,13,.96) 28%,
+          rgba(8,11,13,.55) 57%,
+          rgba(8,11,13,.96) 100%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 1540px;
+      margin: auto;
+      padding: 27px 42px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .brand h1 {
+      font-size: clamp(27px, 2.5vw, 42px);
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .role {
+      margin-top: 11px;
+      color: #b2b6b9;
+      font-size: 13px;
+      letter-spacing: 2.4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 42px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding-top: 8px;
+    }
+
+    nav a {
+      opacity: .92;
+      transition: opacity .2s;
+    }
+
+    nav a:hover {
+      opacity: .55;
+    }
+
+    /* PAGE INTRO */
+
+    main {
+      max-width: 1540px;
+      margin: auto;
+      padding: 42px;
+    }
+
+    .eyebrow {
+      color: #76828b;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .page-title {
+      font-size: clamp(35px, 4vw, 57px);
+      font-weight: 300;
+      letter-spacing: 9px;
+      line-height: 1;
+    }
+
+    .page-title span {
+      color: #818992;
+    }
+
+    .intro {
+      margin-top: 12px;
+      color: #abb2b7;
+      font-size: 12px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    /* TRACK GRID */
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 18px;
+      margin-top: 42px;
+    }
+
+    .track-card {
+      min-height: 158px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background:
+        linear-gradient(110deg, rgba(255,255,255,.018), transparent 60%),
+        var(--panel);
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      overflow: hidden;
+      transition:
+        border-color .2s ease,
+        transform .2s ease,
+        background .2s ease;
+    }
+
+    .track-card:hover {
+      border-color: #48535a;
+      background-color: var(--panel2);
+      transform: translateY(-1px);
+    }
+
+    .art {
+  min-height: 158px;
+  position: relative;
+  border-right: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.art img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+    .track-content {
+      padding: 17px 18px 15px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .track-top {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .number {
+      color: #8e989e;
+      font-size: 13px;
+      border-right: 1px solid var(--line);
+      padding-right: 11px;
+    }
+
+    .track-title {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+    }
+
+    .play {
+      width: 38px;
+      height: 38px;
+      border: 1px solid #d2d6d8;
+      border-radius: 50%;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      flex: none;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .play:hover {
+      background: white;
+      color: #090c0e;
+    }
+
+    .tags {
+      margin: 7px 0 9px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      border: 1px solid #3c474e;
+      border-radius: 12px;
+      padding: 3px 8px;
+      color: #aeb6bb;
+      font-size: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      margin-left: 48px;
+      color: #b2b8bc;
+      font-size: 11px;
+      line-height: 1.5;
+      min-height: 33px;
+    }
+
+    .progress-wrap {
+      margin: auto 0 0 48px;
+      padding-top: 11px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .progress {
+      width: 100%;
+      height: 3px;
+      appearance: none;
+      background: #2c3439;
+      border-radius: 3px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .progress::-webkit-slider-thumb {
+      appearance: none;
+      width: 1px;
+      height: 3px;
+      background: var(--accent);
+      box-shadow: -500px 0 0 500px var(--accent);
+    }
+
+    .time {
+      color: #8f989e;
+      font-size: 10px;
+      min-width: 67px;
+      text-align: right;
+    }
+
+    audio {
+      display: none;
+    }
+
+    /* FEATURED VIDEO */
+
+    .video-section {
+      margin-top: 58px;
+      border-top: 1px solid var(--line);
+      padding-top: 32px;
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .video-copy h2 {
+      font-size: clamp(24px, 2.6vw, 39px);
+      font-weight: 300;
+      letter-spacing: 5px;
+      margin: 8px 0 17px;
+    }
+
+    .video-copy h2 span {
+      color: #818992;
+    }
+
+    .video-copy p {
+      max-width: 440px;
+      color: #aeb5ba;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .youtube {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #000;
+    }
+
+    .youtube iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 1540px;
+      margin: 38px auto 0;
+      padding: 25px 42px 35px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #778188;
+      font-size: 9px;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .header-inner {
+        padding: 24px 22px;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 22px;
+        padding-top: 5px;
+      }
+
+      main {
+        padding: 34px 20px;
+      }
+
+      .track-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-section {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .track-card {
+        grid-template-columns: 64px 1fr;
+      }
+
+      .art {
+        min-height: 170px;
+      }
+
+      .track-content {
+        padding: 14px 12px;
+      }
+
+      .track-top {
+        grid-template-columns: 31px minmax(0, 1fr) auto;
+        gap: 8px;
+      }
+
+      .tags,
+      .description,
+      .progress-wrap {
+        margin-left: 39px;
+      }
+
+      .page-title {
+        letter-spacing: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-glow"></div>
+
+  <div class="header-inner">
+    <div class="brand">
+      <h1>Alexey (Oleksii) Omelchuk</h1>
+      <div class="role">COMPOSER | AUDIO LEAD | SOUND DESIGNER</div>
+    </div>
+
+    <nav>
+      <a href="index.html">WORK</a>
+      <a href="portfolio.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <section>
+    <div class="eyebrow">/ Special Selection</div>
+
+    <h2 class="page-title">
+  CINEMATIC <span>& ORCHESTRAL</span>
+</h2>
+
+   <p class="intro">
+  Selected cinematic and orchestral compositions for games, trailers and storytelling.
+</p>
+
+
+  <section class="track-grid">
+
+    <!-- 01 -->
+    <article class="track-card">
+     <div class="art">
+  <img src="images/fantasy/Image (1).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">01</div>
+          <div class="track-title">Corepunk — Japan Day (Tension)</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Asian</span>
+          <span class="tag">Ethnic</span>
+          <span class="tag">Percussion</span>
+        </div>
+
+        <p class="description">
+          Koto, Korean ajaeng and shamisen, supported by traditional Japanese percussion including tsuri-daiko, kakko, ōtsuzumi and shōko.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/01. Corepunk- Japan Day (Tension).mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 02 -->
+    <article class="track-card">
+     <div class="art">
+  <img src="images/fantasy/Image (2).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">02</div>
+          <div class="track-title">Young Hero Theme</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Fantasy</span>
+          <span class="tag">Orchestral</span>
+          <span class="tag">Epic</span>
+        </div>
+
+        <p class="description">
+          An epic fantasy theme in a full orchestral arrangement.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/02. Corepunk - Young Hero Theme.mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 03 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (3).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">03</div>
+          <div class="track-title">Corepunk — Kazakh Folk Song (Trailer)</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Folk</span>
+          <span class="tag">Kazakh</span>
+          <span class="tag">Trailer</span>
+        </div>
+
+        <p class="description">
+          Based on a Kazakh folk song, with a dynamic trailer arrangement featuring domra and vargan.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/track-03.mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 04 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (4).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">04</div>
+          <div class="track-title">Corepunk — Kazakh Adai (Trailer)</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Folk</span>
+          <span class="tag">Vocals</span>
+          <span class="tag">Trailer</span>
+        </div>
+
+        <p class="description">
+          Inspired by the Kazakh folk composition Adai, featuring folk vocals, domra and vargan in a dynamic trailer arrangement.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/04. Corepunk - Kazakh Adai (Trailer).mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 05 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (5).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">05</div>
+          <div class="track-title">Fantasy Forest (Intro)</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Fantasy</span>
+          <span class="tag">Atmospheric</span>
+          <span class="tag">Intro</span>
+        </div>
+
+        <p class="description">
+          A welcoming composition designed to greet the player at the beginning of their journey.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/05. Corepunk - Fantasy Forest (Intro).mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 06 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (6).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">06</div>
+          <div class="track-title">Corepunk — First Village</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Folk</span>
+          <span class="tag">Hybrid</span>
+          <span class="tag">Lo-Fi</span>
+        </div>
+
+        <p class="description">
+          Folk and classical instruments blended with modern synths and percussion in a lo-fi aesthetic, moving beyond traditional fantasy sound.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/06. Corepunk - First Village.mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 07 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (7).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">07</div>
+          <div class="track-title">Corepunk — PvE Trailer Music</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Trailer</span>
+          <span class="tag">Acoustic</span>
+          <span class="tag">Percussion</span>
+        </div>
+
+        <p class="description">
+          Trailer music featuring flutes, acoustic guitars and powerful orchestral percussion.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/07. Corepunk - PvE Trailer Music.mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 08 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (8).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">08</div>
+          <div class="track-title">Magic Forest</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Fantasy</span>
+          <span class="tag">Orchestral</span>
+          <span class="tag">Atmospheric</span>
+        </div>
+
+        <p class="description">
+          Classical instrumentation and arrangement with plenty of space in the mix, designed to support rather than overload in-game sound.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/08. Corepunk - Magic Forest.mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 09 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (9).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">09</div>
+          <div class="track-title">Corepunk — Second Village</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Folk</span>
+          <span class="tag">Blues</span>
+          <span class="tag">Fusion</span>
+        </div>
+
+        <p class="description">
+          An unusual combination of traditional folk instruments and blues-inspired rhythms.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/09. Corepunk - Second Village.mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 10 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (10).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">10</div>
+          <div class="track-title">Slavic Music (Commercial)</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Slavic</span>
+          <span class="tag">Folk</span>
+          <span class="tag">Commercial</span>
+        </div>
+
+        <p class="description">
+          A concise piece shaped by Slavic musical character and traditional influences.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/10. Slavic Music (Commercial).mp3"></audio>
+      </div>
+    </article>
+
+
+    <!-- 11 -->
+    <article class="track-card">
+      <div class="art">
+  <img src="images/fantasy/Image (11).png" alt="Corepunk artwork">
+</div>
+      <div class="track-content">
+        <div class="track-top">
+          <div class="number">11</div>
+          <div class="track-title">La Quimera — Wedding</div>
+          <button class="play" aria-label="Play">▶</button>
+        </div>
+
+        <div class="tags">
+          <span class="tag">World</span>
+          <span class="tag">Cultural Fusion</span>
+          <span class="tag">Cinematic</span>
+        </div>
+
+        <p class="description">
+          A wedding deep in the jungle evolves musically into a collision between two civilizations.
+        </p>
+
+        <div class="progress-wrap">
+          <input class="progress" type="range" min="0" max="100" value="0">
+          <span class="time">0:00 / 0:00</span>
+        </div>
+
+        <audio src="audio/fantasy/11. La Quimera - Wedding.mp3"></audio>
+      </div>
+    </article>
+
+  </section>
+
+
+  <!-- FEATURED VIDEO -->
+
+  <section class="video-section">
+
+    <div class="video-copy">
+      <div class="eyebrow">/ Featured Video</div>
+
+      <h2>
+        COREPUNK — <span>Tension Action</span>
+      </h2>
+
+      <p>
+        This video showcases my approach to composing music designed to reinforce different emotional states and gameplay situations.
+      </p>
+    </div>
+
+    <div class="youtube">
+      <iframe
+        src="https://www.youtube.com/embed/fO1n5XjgBYw"
+        title="Corepunk — Tension Action"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div>
+    Alexey (Oleksii) Omelchuk<br><br>
+    Composer | Audio Lead | Sound Designer
+  </div>
+
+  <div>
+    Stories Through Sound
+  </div>
+</footer>
+
+
+<script>
+  const cards = document.querySelectorAll('.track-card');
+
+  function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return '0:00';
+
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    return `${minutes}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  cards.forEach(card => {
+    const audio = card.querySelector('audio');
+    const button = card.querySelector('.play');
+    const progress = card.querySelector('.progress');
+    const time = card.querySelector('.time');
+
+    audio.addEventListener('loadedmetadata', () => {
+      time.textContent = `0:00 / ${formatTime(audio.duration)}`;
+    });
+
+    button.addEventListener('click', () => {
+
+      cards.forEach(otherCard => {
+        if (otherCard !== card) {
+          const otherAudio = otherCard.querySelector('audio');
+          const otherButton = otherCard.querySelector('.play');
+
+          if (!otherAudio.paused) {
+            otherAudio.pause();
+            otherButton.textContent = '▶';
+          }
+        }
+      });
+
+      if (audio.paused) {
+        audio.play();
+        button.textContent = '❚❚';
+      } else {
+        audio.pause();
+        button.textContent = '▶';
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+
+      progress.value = (audio.currentTime / audio.duration) * 100;
+
+      time.textContent =
+        `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    });
+
+    progress.addEventListener('input', () => {
+      if (!audio.duration) return;
+
+      audio.currentTime =
+        (progress.value / 100) * audio.duration;
+    });
+
+    audio.addEventListener('ended', () => {
+      button.textContent = '▶';
+      progress.value = 0;
+    });
+  });
+</script>
+
+</body>
+</html>
